@@ -21,7 +21,7 @@
     <a href="/" class="brand-logo">OptiChoice</a>
     <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a th:href="@{/about}">About Us</a></li>
         <li><a href="/login" class="active">Log In</a></li>
     </ul>
 </nav>
@@ -51,7 +51,7 @@
                     <input type="checkbox" name="remember-me">
                     Remember Me
                 </label>
-                <a href="#" class="forgot-link">Forgot Password?</a>
+                <a th:href="@{/forgot-password}" class="forgot-link">Forgot Password?</a>
             </div>
 
             <!-- Submit Button -->
