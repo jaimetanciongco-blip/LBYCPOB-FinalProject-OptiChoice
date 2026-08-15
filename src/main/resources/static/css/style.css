@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #123d7a;
-    background-image: url('../images/background.png');
+    background-image: url('images/bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
