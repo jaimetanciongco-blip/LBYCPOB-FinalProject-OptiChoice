@@ -11,6 +11,7 @@ public class DecisionArchive {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String username;
     private String domainName;
     private String optionA;
     private String optionB;
@@ -21,7 +22,8 @@ public class DecisionArchive {
     public DecisionArchive() {
     }
 
-    public DecisionArchive(String domainName, String optionA, String optionB, String winningChoice, double winningScore) {
+    public DecisionArchive(String username, String domainName, String optionA, String optionB, String winningChoice, double winningScore) {
+        this.username = username;
         this.domainName = domainName;
         this.optionA = optionA;
         this.optionB = optionB;
@@ -33,6 +35,8 @@ public class DecisionArchive {
     public Long getId() {
         return id;
     }
+
+    public String getUsername() { return username; }
 
     public String getDomainName() {
         return domainName;
