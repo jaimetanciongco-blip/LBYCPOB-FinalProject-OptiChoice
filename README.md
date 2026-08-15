@@ -74,10 +74,44 @@ OptiChoice is a decision-support application that helps users evaluate options b
 
 ## Screen Mockups
 **User Log in Page**
-<img width="1920" height="1080" alt="User Log in Page-2" src="https://github.com/user-attachments/assets/123fe020-2df5-4cff-b0a1-efcf04a79aae" />
+<img width="1440" height="797" alt="Screenshot 2026-08-16 at 5 46 37 AM" src="https://github.com/user-attachments/assets/149400a6-29fd-44d1-97f3-6e9fdae883c0" />
+
 
 **Sign Up Page**
-<img width="1920" height="1080" alt="Sign Up Page-2" src="https://github.com/user-attachments/assets/bb43a957-193b-43bf-9ce1-d427061341f6" />
+<img width="1440" height="797" alt="Screenshot 2026-08-16 at 5 47 15 AM" src="https://github.com/user-attachments/assets/0e3beec8-d032-4c09-9ed9-ed8a109a323d" />
+
+
+**About Us Page**
+[insert ss]
+
 
 **Categories Page**
-<img width="1920" height="1080" alt="Categories Page" src="https://github.com/user-attachments/assets/ed53f774-dd24-42a0-b914-dec197033767" />
+<img width="1440" height="798" alt="Screenshot 2026-08-16 at 5 50 38 AM" src="https://github.com/user-attachments/assets/9e89ed2a-4bdb-4825-9d66-8fa98e009fc9" />
+
+
+**Academic Category Page**
+[insert ss]
+
+
+**Professional Category Page**
+[insert ss]
+
+
+**Financial Category Page**
+[insert ss]
+
+
+**Health Category Page**
+[insert ss]
+
+
+**Social Category Page**
+[insert ss]
+
+
+**Matrix Ranking Page**
+[insert ss]
+
+
+**History Archive Page**
+[insert ss]
