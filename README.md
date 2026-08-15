@@ -73,4 +73,6 @@ OptiChoice is a decision-support application that helps users evaluate options b
 ---
 
 ## Screen Mockups
-*(Add mockup images or reference links here)*
+**User Log in Page**
+<img width="1920" height="1080" alt="User Log in Page" src="https://github.com/user-attachments/assets/b49da898-01ef-4d00-9e4e-fdf15f0e51b6" />
+
