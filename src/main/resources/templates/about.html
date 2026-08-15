@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiChoice - About Us</title>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body>
+<body class="about-page">
+
+<!-- Header Navigation -->
+<nav class="navbar">
+    <a href="/" class="brand-logo">OptiChoice</a>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a th:href="@{/about}" class="active">About Us</a></li>
+        <li><a th:href="@{/login}">Log In</a></li>
+    </ul>
+</nav>
+
+<!-- Section 1: Project Overview -->
+<section id="overview" class="about-section">
+    <div class="about-content">
+        <h1>Project Overview</h1>
+        <p>
+            OptiChoice is a user-friendly web application which helps students and professionals combat
+            decision fatigue by converting overwhelming choices into straightforward and assured actions.
+            If you have to deal with a number of competing priorities in your academic, professional,
+            financial, health and social life, OptiChoice enables you to assess your options using
+            personal questionnaires that are specific to each area. The system makes use of an intelligent
+            scoring method that takes your preferences into account and employs AI-driven trade-off
+            analysis to provide objective, bias-free recommendations that are directly aligned with your
+            own values and goals. Whether you are picking an internship, choosing a project topic or
+            handling a personal budget, OptiChoice cuts down on mental strain and saves you time by giving
+            clarity to all your decisions.
+        </p>
+    </div>
+
+    <a href="#team" class="scroll-down" aria-label="Scroll to our team">
+        <span>Meet the Team</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+</section>
+
+<!-- Section 2: Meet the Team -->
+<section id="team" class="about-section team-section">
+    <div class="wave-bg" aria-hidden="true"></div>
+
+    <div class="team-inner">
+        <h2 class="team-heading">Meet the Team</h2>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="avatar">
+                    <img th:src="@{/images/aziel.jpg}" alt="Aziel Gyan L. Raymundo">
+                </div>
+                <h3>Aziel Gyan L. Raymundo</h3>
+                <p>Developer</p>
+            </div>
+
+            <div class="team-member">
+                <div class="avatar">
+                    <img th:src="@{/images/jaime.jpg}" alt="Jaime Lorenzo C. Tanciongco">
+                </div>
+                <h3>Jaime Lorenzo C. Tanciongco</h3>
+                <p>Developer</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
