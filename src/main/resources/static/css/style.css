@@ -384,3 +384,146 @@ body {
 .btn-primary-action:hover {
     background-color: #1d4ed8;
 }
+
+/* ================= History Archive & Results Styles ================= */
+.archive-card, .table-card {
+    background: #ffffff;
+    color: #111827;
+    width: 92%;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.archive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.archive-header h3, .table-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.history-table, .ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.8rem;
+}
+
+.history-table th, .ranking-table th {
+    background-color: #111827;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 1rem;
+    text-align: left;
+}
+
+.history-table th:first-child, .ranking-table th:first-child {
+    border-top-left-radius: 6px;
+}
+
+.history-table th:last-child, .ranking-table th:last-child {
+    border-top-right-radius: 6px;
+}
+
+.history-table td, .ranking-table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.history-table tr:hover td {
+    background-color: #f9fafb;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-academic, .badge[data-domain="academic"] {
+    background-color: #dbeafe !important;
+    color: #1e40af !important;
+}
+
+.badge-professional, .badge[data-domain="professional"] {
+    background-color: #e0e7ff !important;
+    color: #4338ca !important;
+}
+
+.badge-financial, .badge[data-domain="financial"] {
+    background-color: #dcfce7 !important;
+    color: #15803d !important;
+}
+
+.badge-health, .badge[data-domain="health"] {
+    background-color: #ffe4e6 !important;
+    color: #be123c !important;
+}
+
+.badge-social, .badge[data-domain="social"] {
+    background-color: #ffedd5 !important;
+    color: #c2410c !important;
+}
+
+.recommended-choice {
+    font-weight: 700;
+    color: #15803d;
+}
+
+.score-pill {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-left: 4px;
+}
+
+.btn-primary, .btn-evaluate {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.75rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover, .btn-evaluate:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-archive {
+    background-color: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-archive:hover {
+    background-color: #f3f4f6;
+}
+
