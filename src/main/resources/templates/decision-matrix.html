@@ -5,27 +5,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OptiChoice - Decision Matrix</title>
 
-
+    <!-- Google Fonts & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #123d7a;
+            background-image: url('/images/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.8rem 4rem;
+            width: 100%;
+        }
+
+        .brand-logo {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-nav-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
+            padding: 0.55rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-nav-outline:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
+        }
+
+        .btn-nav-solid {
+            background: #ffffff;
+            color: #111827;
+            border: 1.5px solid #ffffff;
+            padding: 0.55rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-nav-solid:hover {
+            background: #f3f4f6;
+        }
+
+        .page-header {
+            text-align: center;
+            margin: 1.5rem auto 2rem;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .matrix-container {
+            background: #ffffff;
+            color: #111827;
+            max-width: 720px;
+            width: 92%;
+            margin: 0 auto 3.5rem;
+            border-radius: 14px;
+            padding: 2.2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        .option-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 0.4rem;
+        }
+
+        .matrix-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            outline: none;
+        }
+
+        .matrix-input:focus {
+            border-color: #123d7a;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1.2rem;
+        }
+
+        .criterion-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            background-color: #fafafa;
+        }
+
+        .criterion-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.6rem;
+        }
+
+        .criterion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .criterion-grid label {
+            font-size: 0.75rem;
+            color: #4b5563;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .btn-primary-action {
+            width: 100%;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.95rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary-action:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
 </head>
 <body>
-
 
 <nav class="navbar">
     <a href="/categories" class="brand-logo">OptiChoice</a>
     <div class="nav-actions">
         <a th:href="@{/categories}" class="btn-nav-outline">Categories</a>
         <a th:href="@{/history}" class="btn-nav-outline">History</a>
-        <a th:href="@{/login}" class="btn-nav-solid">Log Out</a>
+        <a th:href="@{/logout}" class="btn-nav-solid">Log Out</a>
     </div>
 </nav>
-
 
 <div class="page-header">
     <h1 th:text="${domainTitle != null ? domainTitle : 'Decision Evaluation'}">Academic Decision Evaluation</h1>
@@ -34,7 +217,6 @@
     </p>
 </div>
 
-
 <main class="matrix-container">
     <form th:action="@{/calculate}" method="post">
         <input type="hidden" name="domain" th:value="${domain}">
@@ -42,18 +224,20 @@
         <div class="option-inputs">
             <div>
                 <label class="input-label">Option A Name</label>
-                <input type="text" name="optionAName" class="matrix-input" placeholder="e.g. Intern at Startup" required>
+                <!-- Changed name from optionAName to optionA -->
+                <input type="text" name="optionA" class="matrix-input" placeholder="e.g. Intern at Startup" required>
             </div>
             <div>
                 <label class="input-label">Option B Name</label>
-                <input type="text" name="optionBName" class="matrix-input" placeholder="e.g. Research Assistantship" required>
+                <!-- Changed name from optionBName to optionB -->
+                <input type="text" name="optionB" class="matrix-input" placeholder="e.g. Research Assistantship" required>
             </div>
         </div>
 
         <p class="section-title">Rate Criteria (Score: 1–10 | Importance Weight: 1–5)</p>
 
-        <div th:each="criterion, iterStat : ${criteriaList != null ? criteriaList : {'Criterion 1', 'Criterion 2', 'Criterion 3', 'Criterion 4'}}" class="criterion-card">
-            <h4 th:text="${criterion.name != null ? criterion.name : criterion}">Criterion Name</h4>
+        <div th:each="criterion : ${criteriaList != null ? criteriaList : {'Criterion 1', 'Criterion 2', 'Criterion 3', 'Criterion 4'}}" class="criterion-card">
+            <h4 th:text="${criterion}">Criterion Name</h4>
 
             <div class="criterion-grid">
                 <div>
