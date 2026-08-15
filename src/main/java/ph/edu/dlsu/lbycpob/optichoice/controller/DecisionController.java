@@ -1,5 +1,6 @@
 package ph.edu.dlsu.lbycpob.optichoice.controller;
 
+import jakarta.servlet.http.HttpSession;
 import ph.edu.dlsu.lbycpob.optichoice.model.Choice;
 import ph.edu.dlsu.lbycpob.optichoice.model.Criterion;
 import ph.edu.dlsu.lbycpob.optichoice.model.DecisionArchive;
@@ -24,12 +25,18 @@ public class DecisionController {
     }
 
     @GetMapping("/categories")
-    public String categoriesPage() {
+    public String categoriesPage(HttpSession session) {
+        if (session.getAttribute("username") == null) {
+            return "redirect:/login";
+        }
         return "categories";
     }
 
     @GetMapping("/matrix")
-    public String matrixPage(@RequestParam(defaultValue = "academic") String domain, Model model) {
+    public String matrixPage(@RequestParam(defaultValue = "academic") String domain, HttpSession session, Model model) {
+        if (session.getAttribute("username") == null) {
+            return "redirect:/login";
+        }
         DomainCategory domainCategory = decisionEngine.getDomain(domain);
         model.addAttribute("domain", domainCategory);
         model.addAttribute("criteriaList", domainCategory.getDefaultCriteria());
@@ -43,6 +50,7 @@ public class DecisionController {
                             @RequestParam List<Double> scoresA,
                             @RequestParam List<Double> scoresB,
                             @RequestParam List<Integer> weights,
+                            HttpSession session,
                             Model model) {
         DomainCategory domainCategory = decisionEngine.getDomain(domain);
         List<String> defaultCriteria = domainCategory.getDefaultCriteria();
@@ -58,7 +66,13 @@ public class DecisionController {
         List<Choice> choices = new ArrayList<>(List.of(choiceA, choiceB));
         List<Choice> ranked = decisionEngine.evaluateChoices(choices, domainCategory);
 
+        String currentUsername = (String) session.getAttribute("username");
+        if (currentUsername == null) {
+            currentUsername = "guest";
+        }
+
         archiveRepo.save(new DecisionArchive(
+                currentUsername,
                 domainCategory.getName(),
                 optionA,
                 optionB,
@@ -73,9 +87,13 @@ public class DecisionController {
     }
 
     @GetMapping("/history")
-    public String history(Model model) {
-        model.addAttribute("archives", archiveRepo.findAll());
-        return "history";
+    public String history(HttpSession session, Model model) {
+        String currentUsername = (String) session.getAttribute("username");
+        if (currentUsername == null) {
+            return "redirect:/login";
+        }
 
+        model.addAttribute("archives", archiveRepo.findByUsername(currentUsername));
+        return "history";
     }
 }
