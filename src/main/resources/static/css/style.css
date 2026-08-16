@@ -19,15 +19,27 @@ body {
 
 /* Top Navigation Bar */
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.2rem 4.5rem;
+    padding: 1.8rem 4rem;
     width: 100%;
     z-index: 50;
+}
+
+body.about-page .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Center the Categories page nicely vertically */
+.page-header {
+    text-align: center;
+    margin: 4rem auto 2.5rem;
+    max-width: 800px;
+    padding: 0 1rem;
 }
 
 .brand-logo {
@@ -231,6 +243,59 @@ body {
     color: #111827;
     font-weight: 600;
     text-decoration: underline;
+}
+
+.labeled-field {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.labeled-field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.4rem;
+}
+
+
+.password-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+
+.password-input-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrap .form-control {
+    width: 100%;
+    padding: 0.85rem 2.6rem 0.85rem 1rem;
+}
+
+.password-input-wrap .toggle-password {
+    position: absolute;
+    right: 14px;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    z-index: 5;
+}
+
+.password-input-wrap .toggle-password:hover {
+    color: #111827;
+}
+
+@media (max-width: 480px) {
+    .password-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ================= Categories Page Styles ================= */
