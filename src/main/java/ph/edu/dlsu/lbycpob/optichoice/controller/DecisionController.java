@@ -65,24 +65,32 @@ public class DecisionController {
 
         List<Choice> choices = new ArrayList<>(List.of(choiceA, choiceB));
         List<Choice> ranked = decisionEngine.evaluateChoices(choices, domainCategory);
+        boolean isTie = decisionEngine.isTie(ranked);
 
         String currentUsername = (String) session.getAttribute("username");
         if (currentUsername == null) {
             currentUsername = "guest";
         }
 
+        String winnerName = isTie
+                ? (optionA + " & " + optionB + " (Tie)")
+                : ranked.get(0).getOptionName();
+
+
+
         archiveRepo.save(new DecisionArchive(
                 currentUsername,
                 domainCategory.getName(),
                 optionA,
                 optionB,
-                ranked.get(0).getOptionName(),
+                winnerName,
                 ranked.get(0).getCalculatedScore()
         ));
 
         model.addAttribute("domain", domainCategory.getName());
         model.addAttribute("rankedChoices", ranked);
         model.addAttribute("winner", ranked.get(0));
+        model.addAttribute("isTie", isTie);
         return "results";
     }
 

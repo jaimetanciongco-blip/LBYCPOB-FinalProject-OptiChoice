@@ -35,4 +35,11 @@ public class DecisionEngineService {
         choices.sort((a, b) -> Double.compare(b.getCalculatedScore(), a.getCalculatedScore()));
         return choices;
     }
+
+    public boolean isTie(List<Choice> choices) {
+        if (choices == null || choices.size() < 2) {
+            return false;
+        }
+        return Double.compare(choices.get(0).getCalculatedScore(), choices.get(1).getCalculatedScore()) == 0;
+    }
 }

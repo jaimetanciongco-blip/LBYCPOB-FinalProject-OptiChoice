@@ -325,7 +325,7 @@
             <th style="width: 20%;">Domain</th>
             <th style="width: 25%;">Option A</th>
             <th style="width: 25%;">Option B</th>
-            <th style="width: 30%;">Recommended Winner</th>
+            <th style="width: 30%;"><Outcome></Outcome></th>
         </tr>
         </thead>
         <tbody>
@@ -339,10 +339,17 @@
             <td th:text="${item.optionA}">Option A</td>
             <td th:text="${item.optionB}">Option B</td>
             <td>
-                        <span class="recommended-choice">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span th:text="${item.winningChoice}">Option A</span>
-                        </span>
+
+                <span th:if="${item.winningChoice != null and #strings.contains(item.winningChoice, '(Tie)')}" class="tie-choice">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span th:text="${item.winningChoice}">Option A &amp; Option B (Tie)</span>
+                </span>
+
+                <span th:if="${item.winningChoice == null or !#strings.contains(item.winningChoice, '(Tie)')}" class="recommended-choice">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span th:text="${item.winningChoice}">Option A</span>
+                </span>
+                
                 <span class="score-pill" th:text="'(' + ${#numbers.formatDecimal(item.winningScore, 1, 1)} + ' pts)'">(100.0 pts)</span>
             </td>
         </tr>

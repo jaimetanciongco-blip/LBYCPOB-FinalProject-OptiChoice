@@ -210,27 +210,42 @@
     </div>
 </nav>
 
-<div class="page-header">
-    <h1 th:text="${domainTitle != null ? domainTitle : 'Decision Evaluation'}">Academic Decision Evaluation</h1>
-    <p th:text="${domainDescription != null ? domainDescription : 'Evaluate courses, research topics, and study schedules.'}">
-        Evaluate courses, research topics, and study schedules.
+<div class="page-header" th:with="currentDomain=${domain != null ? (domain.name != null ? #strings.toLowerCase(domain.name) : #strings.toLowerCase(domain)) : ''}">
+    <h1 th:text="${domainTitle != null ? domainTitle : 'Decision Evaluation'}">Decision Evaluation</h1>
+    <p th:if="${domainDescription != null}" th:text="${domainDescription}">Evaluate courses, research topics, and study schedules.</p>
+
+    <p th:if="${domainDescription == null}" th:switch="${currentDomain}">
+        <span th:case="'academic'">Evaluate courses, research topics, and study schedules.</span>
+        <span th:case="'professional'">Evaluate job offers, internships, and career opportunities.</span>
+        <span th:case="'financial'">Evaluate major purchases, investments, and budgeting decisions.</span>
+        <span th:case="'health'">Evaluate wellness habits, medical plans, and fitness routines.</span>
+        <span th:case="'social'">Evaluate social commitments, group projects, and events.</span>
+        <span th:case="*">Evaluate options with objective trade-off analysis.</span>
     </p>
 </div>
 
-<main class="matrix-container">
+<main class="matrix-container" th:with="currentDomain=${domain != null ? (domain.name != null ? #strings.toLowerCase(domain.name) : #strings.toLowerCase(domain)) : ''}">
     <form th:action="@{/calculate}" method="post">
-        <input type="hidden" name="domain" th:value="${domain.name}">
+        <input type="hidden" name="domain" th:value="${domain != null ? (domain.name != null ? domain.name : domain) : ''}">
 
         <div class="option-inputs">
             <div>
                 <label class="input-label">Option A Name</label>
-                <!-- Changed name from optionAName to optionA -->
-                <input type="text" name="optionA" class="matrix-input" placeholder="e.g. Intern at Startup" required>
+                <input type="text" name="optionA" class="matrix-input"
+                       th:placeholder="${currentDomain == 'professional' ? 'e.g. Intern at Startup' :
+                       (currentDomain == 'academic' ? 'e.g. Thesis Track A' :
+                       (currentDomain == 'financial' ? 'e.g. High-Yield Savings' :
+                       (currentDomain == 'health' ? 'e.g. Morning Gym Routine' :
+                       (currentDomain == 'social' ? 'e.g. Join Student Council' : 'e.g. Option A'))))}" required>
             </div>
             <div>
                 <label class="input-label">Option B Name</label>
-                <!-- Changed name from optionBName to optionB -->
-                <input type="text" name="optionB" class="matrix-input" placeholder="e.g. Research Assistantship" required>
+                <input type="text" name="optionB" class="matrix-input"
+                       th:placeholder="${currentDomain == 'professional' ? 'e.g. Research Assistantship' :
+                       (currentDomain == 'academic' ? 'e.g. Capstone Project B' :
+                       (currentDomain == 'financial' ? 'e.g. Index Fund Investment' :
+                       (currentDomain == 'health' ? 'e.g. Home Workout Routine' :
+                       (currentDomain == 'social' ? 'e.g. Join Debate Society' : 'e.g. Option B'))))}" required>
             </div>
         </div>
 
