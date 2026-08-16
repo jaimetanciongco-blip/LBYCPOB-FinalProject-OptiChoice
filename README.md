@@ -79,6 +79,10 @@ OptiChoice is a decision-support application that helps users evaluate options b
 <img width="1440" height="797" alt="Screenshot 2026-08-16 at 5 47 15 AM" src="https://github.com/user-attachments/assets/0e3beec8-d032-4c09-9ed9-ed8a109a323d" />
 
 
+**Forgot Password**
+<img width="1440" height="796" alt="Screenshot 2026-08-16 at 6 04 21 PM" src="https://github.com/user-attachments/assets/852758c3-adab-4af8-a3f3-7f337f54ef93" />
+
+
 **About Us Page**
 <img width="2880" height="3188" alt="OptiChoice - About Us" src="https://github.com/user-attachments/assets/5bcef217-2cd2-4b23-a0bb-062533a28b1d" />
 
