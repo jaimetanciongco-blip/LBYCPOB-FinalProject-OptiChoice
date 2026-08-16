@@ -63,13 +63,30 @@ public class AuthController {
     public String handleSignup(@RequestParam String username,
                                @RequestParam String email,
                                @RequestParam String password,
+                               @RequestParam(required = false) String confirmPassword,
                                Model model) {
+        if (confirmPassword != null && !password.equals(confirmPassword)) {
+            model.addAttribute("error", "Passwords do not match.");
+            return "signup";
+        }
+
+        if (userRepository.findByUsername(username).isPresent()) {
+            model.addAttribute("error", "Username has already been used.");
+            return "signup";
+        }
+
+        if (userRepository.findByEmail(email).isPresent()) {
+            model.addAttribute("error", "Email has already been used.");
+            return "signup";
+        }
+
         try {
             userRepository.save(new User(username, email, password));
         } catch (DataIntegrityViolationException e) {
-            model.addAttribute("error", "That username or email is already registered.");
+            model.addAttribute("error", "Username or email has already been used.");
             return "signup";
         }
+
         return "redirect:/login";
     }
 

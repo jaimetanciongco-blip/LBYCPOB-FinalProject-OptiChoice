@@ -27,6 +27,8 @@
     <div class="login-card">
         <h2>Sign up</h2>
 
+        <p th:if="${error}" th:text="${error}" style="color: #dc2626; font-size: 0.85rem; margin-bottom: 1.2rem; font-weight: 500;"></p>
+
         <form th:action="@{/signup}" method="post">
             <div class="form-group">
                 <i class="fa-solid fa-user input-icon"></i>
