@@ -19,11 +19,15 @@ body {
 
 /* Top Navigation Bar */
 .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2.2rem 4.5rem;
     width: 100%;
+    z-index: 50;
 }
 
 .brand-logo {
@@ -527,279 +531,45 @@ body {
     background-color: #f3f4f6;
 }
 
+/* ================= About Us Page & Sections ================= */
+
 html {
     scroll-behavior: smooth;
 }
-
 .about-section {
-    min-height: calc(100vh - 90px);
+    position: relative;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    padding: 1rem 6vw 4rem;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 90px 6vw 80px;
     text-align: center;
 }
 
 .about-content {
     max-width: 1150px;
+    margin: 0 auto;
 }
 
 .about-content h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .about-content p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    margin-top: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
     color: rgba(255, 255, 255, 0.92);
     text-align: justify;
 }
 
-.scroll-down {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-    color: #ffffff;
-    text-decoration: none;
-    opacity: 0.85;
-    z-index: 10;
-    animation: bounce-down 2.2s infinite;
-}
-
-.scroll-down span {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.scroll-down i {
-    font-size: 1.3rem;
-}
-
-.scroll-down:hover {
-    opacity: 1;
-}
-
-@keyframes bounce-down {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
-}
-
-.team-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 3rem;
-}
-
-.team-inner {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1150px;
-}
-
-.team-heading {
-    font-size: 2.4rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 2.5rem;
-}
-
-.team-grid, .team-cards {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 14rem;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-top: 5rem;
-}
-
-.team-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.team-member {
-    width: 320px;
-}
-
-.avatar {
-    width: 220px;
-    height: 220px;
-    margin: 0 auto 1.6rem;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.team-member h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.35rem;
-}
-
-.team-member p {
-    font-size: 0.98rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-@media (max-width: 600px) {
-    .about-content h1 {
-        font-size: 2.1rem;
-    }
-
-    .about-content p {
-        font-size: 1rem;
-    }
-
-    .team-grid {
-        gap: 3rem;
-    }
-}
-
-body.about-page {
-    background-color: #123d7a;
-    background-image: url('../images/bg.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 100vw 100vh;
-    background-attachment: fixed;
-}
-
-.labeled-field {
-    text-align: left;
-    margin-bottom: 1.2rem;
-}
-
-.labeled-field label {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 0.4rem;
-}
-
-.labeled-field .form-control {
-    padding: 0.85rem 1rem;
-}
-
-.password-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.password-input-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.password-input-wrap .form-control {
-    padding-right: 2.6rem;
-}
-
-.password-input-wrap .toggle-password {
-    position: absolute;
-    right: 14px;
-    color: #9ca3af;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 480px) {
-    .password-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Container holding the circular photo */
-.team-avatar, .profile-img-container {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.2rem auto; /* Centers the circle horizontally within the card */
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.team-avatar img, .profile-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.about-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px 40px;
-    box-sizing: border-box;
-}
-
-.scroll-up {
-    position: absolute;
-    top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    gap: 4px;
-    cursor: pointer;
-}
-
-.scroll-up:hover {
-    opacity: 0.8;
-}
-
+/* Navigation Buttons */
 .scroll-down,
 .scroll-up {
     position: absolute;
@@ -831,38 +601,69 @@ html {
     font-size: 1.3rem;
 }
 
-/* Positions & Animations */
 .scroll-down {
-    bottom: 2.5rem;
+    bottom: 2.2rem;
     animation: bounce-down 2.2s infinite ease-in-out;
 }
 
 .scroll-up {
-    top: 2rem;
+    top: 5.5rem;
     animation: bounce-up 2.2s infinite ease-in-out;
 }
 
-/* Keyframes with horizontal centering preserved */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 260px;
+}
+
+/* Force the profile picture into a small circle */
+.avatar {
+    width: 180px;
+    height: 180px;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.2rem auto;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 @keyframes bounce-down {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
 }
 
 @keyframes bounce-up {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(5px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(10px); }
+    60% { transform: translateX(-50%) translateY(5px); }
 }
