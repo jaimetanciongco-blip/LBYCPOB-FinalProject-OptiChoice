@@ -1,4 +1,4 @@
-# OptiChoice
+<img width="1440" height="797" alt="Screenshot 2026-08-16 at 5 59 42 PM" src="https://github.com/user-attachments/assets/f596557d-f418-495a-9991-c802485e6be2" /># OptiChoice
 
 ## Team Members
 * **Aziel Gian L. Raymundo** - azielraymundo-ux
@@ -82,7 +82,7 @@ OptiChoice is a decision-support application that helps users evaluate options b
 
 
 **About Us Page**
-[insert ss]
+<img width="2880" height="3188" alt="OptiChoice - About Us" src="https://github.com/user-attachments/assets/5bcef217-2cd2-4b23-a0bb-062533a28b1d" />
 
 
 **Categories Page**
@@ -90,28 +90,28 @@ OptiChoice is a decision-support application that helps users evaluate options b
 
 
 **Academic Category Page**
-[insert ss]
+<img width="2880" height="2366" alt="OptiChoice - Decision Matrix" src="https://github.com/user-attachments/assets/b7881303-59f1-433e-b8f1-0ad31abf3857" />
 
 
 **Professional Category Page**
-[insert ss]
+<img width="2880" height="2366" alt="OptiChoice - Decision Matrix (Professional)" src="https://github.com/user-attachments/assets/553f8535-73f7-40e0-80fc-7f52c6ddbd2f" />
 
 
 **Financial Category Page**
-[insert ss]
+<img width="2880" height="2366" alt="OptiChoice - Decision Matrix (Financial)" src="https://github.com/user-attachments/assets/dc99f192-a7e6-4d04-a64c-19512bcdd11c" />
 
 
 **Health Category Page**
-[insert ss]
+<img width="2880" height="2366" alt="OptiChoice - Decision Matrix (Health)" src="https://github.com/user-attachments/assets/c6378c65-d8ad-4824-8691-9219f74832e1" />
 
 
 **Social Category Page**
-[insert ss]
+<img width="2880" height="2366" alt="OptiChoice - Decision Matrix (Financial)" src="https://github.com/user-attachments/assets/bd5955c7-2702-49ea-b650-e4e7e7d3fa4d" />
 
 
 **Matrix Ranking Page**
-[insert ss]
+<img width="1440" height="796" alt="Screenshot 2026-08-16 at 5 59 59 PM" src="https://github.com/user-attachments/assets/381026a6-ea7c-45e9-badb-ea475ab89726" />
 
 
 **History Archive Page**
-[insert ss]
+<img width="1439" height="795" alt="Screenshot 2026-08-16 at 6 00 19 PM" src="https://github.com/user-attachments/assets/d14461f3-c352-406d-a902-127f5a935b9e" />
