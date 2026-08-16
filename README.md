@@ -1,5 +1,3 @@
-<img width="1440" height="797" alt="Screenshot 2026-08-16 at 5 59 42 PM" src="https://github.com/user-attachments/assets/f596557d-f418-495a-9991-c802485e6be2" /># OptiChoice
-
 ## Team Members
 * **Aziel Gian L. Raymundo** - azielraymundo-ux
 * **Jaime Lorenzo C. Tanciongco** - jaimetanciongo-blip
