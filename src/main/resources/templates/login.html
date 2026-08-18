@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OptiChoice - Log in</title>
 
-    <!-- Google Fonts & Font Awesome Icons -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- External CSS -->
+
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<!-- Header Navigation -->
+
 <nav class="navbar">
     <a href="/" class="brand-logo">OptiChoice</a>
     <ul class="nav-links">
@@ -26,34 +26,33 @@
     </ul>
 </nav>
 
-<!-- Centered Form Container -->
 <main class="main-container">
     <div class="login-card">
         <h2>Log in</h2>
 
-        <!-- Displays error when username or password is incorrect -->
+
         <p th:if="${error}" th:text="${error}" style="color: #dc2626; font-size: 0.85rem; margin-bottom: 1.2rem; font-weight: 500;"></p>
 
-        <!-- Displays success message after resetting password -->
+
         <p th:if="${param.resetSuccess}" style="color: #16a34a; font-size: 0.85rem; margin-bottom: 1.2rem; font-weight: 500;">
             Password reset successfully! Please log in.
         </p>
 
         <form th:action="@{/login}" method="post">
-            <!-- Username Field -->
+
             <div class="form-group">
                 <i class="fa-solid fa-user input-icon"></i>
                 <input type="text" name="username" class="form-control" placeholder="Username" required>
             </div>
 
-            <!-- Password Field -->
+
             <div class="form-group">
                 <i class="fa-solid fa-lock input-icon"></i>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                 <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
             </div>
 
-            <!-- Options Row -->
+
             <div class="form-options">
                 <label class="remember-me">
                     <input type="checkbox" name="remember-me">
@@ -62,7 +61,7 @@
                 <a th:href="@{/forgot-password}" class="forgot-link">Forgot Password?</a>
             </div>
 
-            <!-- Submit Button -->
+
             <button type="submit" class="btn-submit">Log in</button>
         </form>
 
@@ -72,7 +71,7 @@
     </div>
 </main>
 
-<!-- Toggle Password Visibility Script -->
+
 <script>
     function togglePasswordVisibility() {
         const passwordInput = document.getElementById('password');
